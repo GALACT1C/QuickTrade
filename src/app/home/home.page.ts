@@ -6,6 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  nombre : string = "";
+  descripcion : string = "";
+  categoria :Number = 2;
+  precio : Number = 0;
+  m2vivienda : Number = 0;
+  nbanyos : Number = 0;
+  nhabitaciones : Number = 0;
+  localidad : string = "";
+
 
   constructor() {}
 
