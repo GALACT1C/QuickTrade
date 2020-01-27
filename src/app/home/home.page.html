@@ -10,12 +10,12 @@
   <div class="ion-padding">
     <ion-item>
       <ion-label>Nombre:</ion-label>
-      <ion-input type="Text" placeholder="Escriba su nombre">{{nombre}}</ion-input>
+      <ion-input type="Text" placeholder="Escriba su nombre" [(ngModel)] = "nombre"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Descripcion:</ion-label>
-      <ion-textarea type="descripcion" placeholder="Escribe aqui"></ion-textarea>
+      <ion-textarea type="descripcion" placeholder="Escribe aqui" [(ngModel)] = "descripcion"></ion-textarea>
     </ion-item>
 
     <ion-list>
@@ -92,5 +92,12 @@
       <ion-label>Precio:</ion-label>
       <ion-input type="Number">{{precio}}</ion-input>
     </ion-item>
+
+    <ion-list>
+      <ion-item *ngFor = "let elemento of listado2">
+          {{elemento.nombre}} | {{elemento.descripcion}} | {{elemento.categoria}} | {{elemento.precio}} |
+      </ion-item>
+    </ion-list>
+    <ion-button (click) ="guardardatos()">Guardar</ion-button>
   </div>
 </ion-content>
