@@ -14,8 +14,10 @@ export class HomePage {
   nbanyos : Number = 0;
   nhabitaciones : Number = 0;
   localidad : string = "";
-
-
+  categoria1 : Number = 1;
+  categoria2 : Number = 1;
+  km : Number = 0;
+  anyos : Number = 0;
   constructor() {}
 
 }

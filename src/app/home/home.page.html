@@ -33,7 +33,7 @@
     <div *ngIf="categoria == 1">
         <ion-item>
             <ion-label>Tipo  de estado:</ion-label>
-            <ion-select placeholder="Selecciona una categoría" [(ngModel)] = "categoria">
+            <ion-select placeholder="Selecciona una categoría" [(ngModel)] = "categoria1">
               <ion-select-option value="1">Usado</ion-select-option>
               <ion-select-option value="2">Perfecto estado</ion-select-option>
             </ion-select>
@@ -69,11 +69,22 @@
     <div *ngIf="categoria == 4">
         <ion-item>
             <ion-label>Tipo de motor:</ion-label>
-            <ion-select placeholder="Selecciona una categoría" [(ngModel)] = "categoria">
+            <ion-select placeholder="Selecciona una categoría" [(ngModel)] = "categoria2">
               <ion-select-option value="1">Coche</ion-select-option>
               <ion-select-option value="2">Moto</ion-select-option>
             </ion-select>
           </ion-item>
+
+          <ion-item>
+              <ion-label>km:</ion-label>
+              <ion-input type="number" [(ngModel)] = "km"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label>anyos:</ion-label>
+              <ion-input type="number" [(ngModel)] = "anyos"></ion-input>
+          </ion-item>
+
     </div>
     
 
