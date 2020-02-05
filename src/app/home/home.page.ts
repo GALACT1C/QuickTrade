@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {iProducto,iInmobiliaria, iTecnologia, iMotor} from "../interfaces/interfaces.page";
 import {DetailServices} from '../details/details.services';
 import { AlertController } from '@ionic/angular';
+import { snapshotChanges } from '@angular/fire/database';
 
 @Component({
   selector: 'app-home',
@@ -47,6 +48,17 @@ export class HomePage {
     }
 ] 
 
+  constructor(private service : DetailServices) {}
+    ngOnInit(){
+      let ref=this.service.getProductos();
+      ref.once('value', snapshot =>{
+        snapshot.forEach(child =>{
+          let value = child.val();
+          this.listado1.push(value)
+          })
+      })
+  }
+
   listado2 : (iProducto | iInmobiliaria | iTecnologia | iMotor)[];
   public alertController: AlertController;
 
@@ -62,38 +74,32 @@ export class HomePage {
   guardardatos2(){ 
     //Tecnología
     if(this.categoria == 1){
-      this.listado2.push(
-        {id : this.listado2.length + 1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, estado : this.estado}
+      let producto:(iProducto | iTecnologia) =(
+        {id : this.listado1.length + 1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, estado : this.estado}
       );
-    alert("La inserción se ha efectuado con éxito");
+      this.service.setProducto(producto);
     }
     //Motor
     else if(this.categoria == 4){
-      this.listado2.push(
-        {id : this.listado2.length + 1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, vehiculo : this.vehiculo, km : this.km, anyos : this.anyos}
+      let producto:(iProducto | iMotor) =(
+        {id : this.listado1.length + 1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, vehiculo : this.vehiculo, km : this.km, anyos : this.anyos}
       );
-      alert("La inserción se ha efectuado con éxito");
+      this.service.setProducto(producto);
     }
     //Inmobiliaria
     else if(this.categoria == 3){
-      this.listado2.push(
-        {id : this.listado2.length + 1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, m2 : this.m2vivienda, nbanyos : this.nbanyos, nhabitaciones : this.nhabitaciones, localidad : this.localidad}
-      );
-      alert("La inserción se ha efectuado con éxito");
+      let producto:(iProducto | iInmobiliaria) =(
+        {id : this.listado1.length + 1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, m2 : this.m2vivienda, nbanyos : this.nbanyos, nhabitaciones : this.nhabitaciones, localidad : this.localidad}
+        );
+      this.service.setProducto(producto);
     }
     //Hogar
     else{
-      this.listado2.push(
-        {id : this.listado2.length + 1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria}
+      let producto:(iProducto) =(
+        {"id" : this.listado1.length + 1, "nombre" : this.nombre, "descripcion" : this.descripcion, "precio" : this.precio, "categoria" : this.categoria}
       );
-      alert("La inserción se ha efectuado con éxito");
+      this.service.setProducto(producto);
     }
   }
-
-  constructor(private service : DetailServices) {}
-  ngOnInit(){
-    this.listado2=this.service.getListado();
-  }
-
 }
 
