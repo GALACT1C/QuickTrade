@@ -23,6 +23,7 @@ export class HomePage {
   anyos : number = 0;
   listado1 : any[] = [
     {
+      id : 1,
       nombre : "Juan",
       descripcion : "illojuan",
       categoria : 1,
@@ -30,6 +31,7 @@ export class HomePage {
     },
 
     {
+      id : 2,
       nombre : "Pepe",
       descripcion : "illopepe",
       categoria : 2,
@@ -37,6 +39,7 @@ export class HomePage {
     },
 
     {
+      id : 3,
       nombre : "David",
       descripcion : "illodavid",
       categoria : 1,

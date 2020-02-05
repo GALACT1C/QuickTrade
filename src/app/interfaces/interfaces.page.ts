@@ -1,5 +1,5 @@
 import  {Component} from '@angular/core';;
-import {NumericValueAccesor} from '@ionic/angular';
+import {NumericValueAccessor} from '@ionic/angular';
 
 export interface iProducto{
     id: number,

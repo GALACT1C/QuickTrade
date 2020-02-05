@@ -105,12 +105,8 @@
       <ion-item *ngFor="let elemento of listado1">
           {{elemento.nombre}} | {{elemento.descripcion}} | {{elemento.precio}} |
           <div>
-            <ion-button color="success" [routerLink]="['/details/',elemento.id]" routerDirection = "root">Detalles</ion-button>
+            <ion-button color="success" [routerLink]="['/detalles/',elemento.id]" routerDirection = "root">Detalles</ion-button>
           </div>
         </ion-item>
-  </ion-button>
-
-  <ion-button>
-
   </ion-button>
 </ion-content>
