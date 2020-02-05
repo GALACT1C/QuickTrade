@@ -33,8 +33,8 @@
     <div *ngIf="categoria == 1">
         <ion-item>
             <ion-label>Tipo  de estado:</ion-label>
-            <ion-select placeholder="Selecciona una categoría" [(ngModel)] = "categoria1">
-              <ion-select-option value="1">Usado</ion-select-option>
+            <ion-select placeholder="Selecciona una categoría" [(ngModel)] = "estado">
+              <ion-select-option value="1">Usado</ion-select-option>o
               <ion-select-option value="2">Perfecto estado</ion-select-option>
             </ion-select>
           </ion-item>
@@ -69,7 +69,7 @@
     <div *ngIf="categoria == 4">
         <ion-item>
             <ion-label>Tipo de motor:</ion-label>
-            <ion-select placeholder="Selecciona una categoría" [(ngModel)] = "categoria2">
+            <ion-select placeholder="Selecciona una categoría" [(ngModel)] = "vehiculo">
               <ion-select-option value="1">Coche</ion-select-option>
               <ion-select-option value="2">Moto</ion-select-option>
             </ion-select>
@@ -98,6 +98,19 @@
           {{elemento.nombre}} | {{elemento.descripcion}} | {{elemento.categoria}} | {{elemento.precio}} |
       </ion-item>
     </ion-list>
-    <ion-button (click) ="guardardatos()">Guardar</ion-button>
+    <ion-button (click) ="guardardatos2()">Guardar</ion-button>
   </div>
+
+  <ion-button>
+      <ion-item *ngFor="let elemento of listado1">
+          {{elemento.nombre}} | {{elemento.descripcion}} | {{elemento.precio}} |
+          <div>
+            <ion-button color="success" [routerLink]="['/details/',elemento.id]" routerDirection = "root">Detalles</ion-button>
+          </div>
+        </ion-item>
+  </ion-button>
+
+  <ion-button>
+
+  </ion-button>
 </ion-content>
