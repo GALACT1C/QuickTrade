@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let elemento of producto">
+    {{elemento.nombre}} | {{elemento.descripcion}} | {{elemento.precio}} |
+    <div>
+      <ion-button color="success" [routerLink]="['/detalles/',elemento.id]" routerDirection = "root">Detalles</ion-button>
+      <ion-button color="success" [routerLink]="['/modificar/',elemento.id]" routerDirection = "root">Modificar</ion-button>
+      <ion-button color="success" (click)="borrar(elemento.id)">Borrar</ion-button>
+    </div>
+  </ion-item>
+</ion-content>

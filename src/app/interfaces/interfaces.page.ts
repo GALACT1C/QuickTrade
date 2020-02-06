@@ -3,6 +3,7 @@ import {NumericValueAccessor} from '@ionic/angular';
 
 export interface iProducto{
     id: number,
+    id_usuario: number,
     nombre: string,
     descripcion: string,
     precio: number,

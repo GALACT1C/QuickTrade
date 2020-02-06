@@ -8,6 +8,20 @@ const routes: Routes = [
     path: 'detalles/:id',
     loadChildren: () => import('./detalles/detalles.module').then( m => m.DetallesPageModule)
   },
+  {
+    path: 'principal/:id',
+    loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
+  },
+  {
+    path: 'misproductos/:id',
+    loadChildren: () => import('./misproductos/misproductos.module').then( m => m.MisproductosPageModule)
+  },
+  {
+    path: 'modificar/:id',
+    loadChildren: () => import('./modificar/modificar.module').then( m => m.ModificarPageModule)
+  },
+
+
 
 ];
 
