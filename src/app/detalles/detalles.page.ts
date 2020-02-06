@@ -27,6 +27,9 @@ export class DetallesPage implements OnInit{
   vehiculo : number = 1;
   km : number = 0;
   anyos : number = 0;
+  /*** Apartado C */
+  megusta : boolean = false;
+  /*** Fin Apartado C */
   listado3:(iProducto | iInmobiliaria | iTecnologia | iMotor)
   ngOnInit() {
       this.id = +this._activatedRoute.snapshot.paramMap.get('id');

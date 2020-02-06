@@ -106,6 +106,12 @@
           {{elemento.nombre}} | {{elemento.descripcion}} | {{elemento.precio}} |
           <div>
             <ion-button color="success" [routerLink]="['/detalles/',elemento.id]" routerDirection = "root">Detalles</ion-button>
+            <!-- Apartado A -->
+            <ion-button color="success" (click)="sigusta()">ME GUSTA</ion-button>
+            <!-- Fin Apartado A -->
+            <!-- Apartado D -->
+            <ion-button color="success" (click)="nogusta()">NO ME GUSTA</ion-button>
+            <!-- Fin Apartado D -->
           </div>
         </ion-item>
   </ion-button>

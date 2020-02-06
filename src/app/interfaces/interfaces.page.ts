@@ -7,7 +7,10 @@ export interface iProducto{
     nombre: string,
     descripcion: string,
     precio: number,
-    categoria: number
+    categoria: number,
+    /*** Apartado C */
+    megusta: boolean
+    /*** Fin Apartado C */
 };
 
 export interface iInmobiliaria extends iProducto{
