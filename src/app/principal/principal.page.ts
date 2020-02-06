@@ -4,6 +4,7 @@ import {DetailServices} from '../details/details.services';
 import { AlertController } from '@ionic/angular';
 import { snapshotChanges } from '@angular/fire/database';
 import { ActivatedRoute } from '@angular/router';
+import { stringify } from '@angular/compiler/src/util';
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.page.html',
@@ -122,6 +123,10 @@ export class PrincipalPage implements OnInit {
   /*** Apartado C */
   sigusta(megusta: boolean){
     this.megusta=true;
+    /** Apartado E - soy consciente que la variable megusta no es number, pero no me da tiempo a más */
+    
+    var contadormegusta = this.megusta + 1;
+    /** Apartado E */
     /*** Apartado B */
     alert("Me gusta");
     /*** Fin Apartado B */
@@ -131,6 +136,9 @@ export class PrincipalPage implements OnInit {
   /*** Apartado D */
   nogusta(megusta: boolean){
     this.megusta=false;
+    /** Apartado E */
+    var contadormegusta = this.megusta - 1;
+    /** Apartado E */
     alert("Ya no te gusta");
   /*** Fin Apartado D */
   }

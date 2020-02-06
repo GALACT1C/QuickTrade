@@ -22,6 +22,8 @@ export class HomePage {
   vehiculo : number = 1;
   km : number = 0;
   anyos : number = 0;
+  megusta : boolean = false;
+  id_usuario : number;
   listado1 : any[] = [
     {
       id : 1,
@@ -75,28 +77,28 @@ export class HomePage {
     //Tecnología
     if(this.categoria == 1){
       let producto:(iProducto | iTecnologia) =(
-        {id : this.listado1.length + 1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, estado : this.estado}
+        {id : this.listado1.length + 1, id_usuario : this.id_usuario, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, estado : this.estado, megusta : this.megusta}
       );
       this.service.setProducto(producto);
     }
     //Motor
     else if(this.categoria == 4){
       let producto:(iProducto | iMotor) =(
-        {id : this.listado1.length + 1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, vehiculo : this.vehiculo, km : this.km, anyos : this.anyos}
+        {id : this.listado1.length + 1, id_usuario : this.id_usuario, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, vehiculo : this.vehiculo, km : this.km, anyos : this.anyos, megusta : this.megusta}
       );
       this.service.setProducto(producto);
     }
     //Inmobiliaria
     else if(this.categoria == 3){
       let producto:(iProducto | iInmobiliaria) =(
-        {id : this.listado1.length + 1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, m2 : this.m2vivienda, nbanyos : this.nbanyos, nhabitaciones : this.nhabitaciones, localidad : this.localidad}
+        {id : this.listado1.length + 1, id_usuario : this.id_usuario, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, m2 : this.m2vivienda, nbanyos : this.nbanyos, nhabitaciones : this.nhabitaciones, localidad : this.localidad, megusta : this.megusta}
         );
       this.service.setProducto(producto);
     }
     //Hogar
     else{
       let producto:(iProducto) =(
-        {"id" : this.listado1.length + 1, "nombre" : this.nombre, "descripcion" : this.descripcion, "precio" : this.precio, "categoria" : this.categoria}
+        {"id" : this.listado1.length + 1, id_usuario : this.id_usuario, "nombre" : this.nombre, "descripcion" : this.descripcion, "precio" : this.precio, "categoria" : this.categoria, megusta : this.megusta}
       );
       this.service.setProducto(producto);
     }
